@@ -29,6 +29,12 @@ export interface Ingredient {
   note?: string
 }
 
+export interface NutritionItem {
+  label: string
+  value: number
+  unit?: Unit
+}
+
 export interface Recipe {
   title: string
   description?: string
