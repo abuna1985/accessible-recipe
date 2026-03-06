@@ -1,1 +1,115 @@
- 
+{
+  "title": "Vegan Pesto Pasta",
+  "description": "This pasta dish is perfect for vegans and non-vegans alike. The vegan pesto is made with fresh basil, garlic, and pine nuts, and pairs perfectly with the pasta for a delicious and flavorful meal.",
+  "servings": 8,
+  "totalTime": {
+    "duration": 25,
+    "unit": "minutes"
+  },
+  "prepTime": {
+    "duration": 15,
+    "unit": "minutes"
+  },
+  "cookTime": {
+    "duration": 10,
+    "unit": "minutes"
+  },
+  "ingredients": [
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "fresh basil",
+      "note": "packed"
+    },
+    {
+      "quantity": 1,
+      "unit": "cup",
+      "name": "fresh arugula",
+      "note": "packed"
+    },
+    {
+      "quantity": 0.5,
+      "name": "lemon, juiced"
+    },
+    {
+      "quantity": 0.333,
+      "unit": "cup",
+      "name": "olive oil"
+    },
+    {
+      "quantity": 0.5,
+      "unit": "cup",
+      "name": "water"
+    },
+    {
+      "quantity": 2,
+      "name": "garlic cloves",
+      "note": "peeled"
+    },
+    {
+      "quantity": 1,
+      "unit": "tsp",
+      "name": "pepper"
+    },
+    {
+      "quantity": 2,
+      "unit": "tsp",
+      "name": "kosher salt"
+    },
+    {
+      "quantity": 1.25,
+      "unit": "cup",
+      "name": "almond meal"
+    },
+    {
+      "quantity": 1,
+      "unit": "lb",
+      "name": "vegan spaghetti"
+    },
+    {
+      "quantity": 0.333,
+      "unit": "cup",
+      "name": "pasta water",
+      "note": "if you're using this as a dip, omit the pasta water"
+    }
+  ],
+  "steps": [
+    "Combine basil, arugula, lemon juice, water, and olive oil to a blender and blend for 5-10 seconds.",
+    "Add garlic, salt, pepper, and almond meal to the blender and blend until completely incorporated.",
+    "Boil salted water and cook spaghetti according to packaging instructions.",
+    "When draining the pasta, reserve ⅓ to 1 cup (80 to 235 ml) of water.",
+    "Once drained, return the pasta to the pot, and stir in the pesto, adding reserved pasta water until the sauce reaches desired consistency.",
+    "Enjoy!"
+  ],
+  "nutrition": [
+    {
+      "label": "Calories",
+      "value": 334
+    },
+    {
+      "label": "Fat",
+      "value": 12,
+      "unit": "g"
+    },
+    {
+      "label": "Carbs",
+      "value": 46,
+      "unit": "g"
+    },
+    {
+      "label": "Fiber",
+      "value": 4,
+      "unit": "g"
+    },
+    {
+      "label": "Sugar",
+      "value": 2,
+      "unit": "g"
+    },
+    {
+      "label": "Protein",
+      "value": 11,
+      "unit": "g"
+    }
+  ]
+}
