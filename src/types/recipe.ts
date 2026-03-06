@@ -2,7 +2,7 @@ export type TimeUnit = "minutes" | "hours"
 
 export interface Time {
   duration: number
-  unit: T
+  unit: TimeUnit
 }
 
 export const UNITS = [
