@@ -35,8 +35,14 @@ export interface NutritionItem {
   unit?: Unit
 }
 
+export interface RecipeImage {
+  src: string
+  alt: string
+}
+
 export interface Recipe {
   title: string
+  image: RecipeImage
   description?: string
   servings: number
   totalTime: Time

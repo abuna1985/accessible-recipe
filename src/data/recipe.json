@@ -1,5 +1,9 @@
 {
   "title": "Vegan Pesto Pasta",
+  "image": {
+    "src": "https://unsplash.com/photos/green-vegetable-on-white-ceramic-plate-jE2fHnuo2lg",
+    "alt": "A bowl of vegan pesto pasta garnished with fresh basil leaves"
+  },
   "description": "This pasta dish is perfect for vegans and non-vegans alike. The vegan pesto is made with fresh basil, garlic, and pine nuts, and pairs perfectly with the pasta for a delicious and flavorful meal.",
   "servings": 8,
   "totalTime": {
