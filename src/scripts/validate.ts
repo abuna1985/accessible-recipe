@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { UNITS, type Recipe } from "../types/recipe";
+import { type Result } from "../types/result";
 
 const TimeSchema = z.object({
   duration: z.number().positive(),
@@ -37,28 +38,24 @@ const RecipeSchema = z.object({
   nutrition: z.array(NutritionItemSchema).optional(),
 });
 
-// Result <T>: Generic type that forces to handle success and error cases
-export type Result<T> = { success: true; data: T } | { success: false; error: string };
-
 /**
  * Validates raw JSON data against the RecipeSchema at runtime.
  *
  * @param data - unkown data fro mJSON import or external source
  * @returns Result<Recipe> - success with typed data
- * @error Result<string> - error with error message
  */
 export function validateRecipe(data: unknown): Result<Recipe> {
   const result = RecipeSchema.safeParse(data);
 
   if (!result.success) {
     return {
-      success: false,
+      ok: false,
       error: result.error.issues.map((issue) => issue.message).join(", "),
     };
   }
 
   return {
-    success: true,
+    ok: true,
     data: result.data,
   };
 }
