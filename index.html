@@ -11,75 +11,68 @@
     <title>Vegan Pesto Pasta | Accessible Recipe</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <nav class="site-header__nav">
+        <a href="#mainContent" class="site-header__skip-link">Skip to main content</a>
       </nav>
+      <p class="site-header__name">Accessible Recipe</p>
     </header>
-    <main id="main-content">
-      <article>
-        <header>
-          <h1 class="recipe-title">Vegan Pesto Pasta</h1>
-          <p class="recipe-description">
+    <main id="mainContent" class="main">
+      <article class="recipe">
+        <header class="recipe__header">
+          <h1 id="recipeTitle" class="recipe__title">Vegan Pesto Pasta</h1>
+          <p id="recipeDescription" class="recipe__description">
             This pasta dish is perfect for vegans and non-vegans alike. The vegan fresh basil,
             garlic, and almond meal, and pairs perfectly with the pasta.
           </p>
           <img
-            src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1200&q=80"
-            alt="A bowl of vegan pesto pasta garnished with fresh basil leaves"
+            src=""
+            id="recipeImage"
+            class="recipe__image"
+            alt=""
             width="1200"
             height="800"
             loading="lazy"
-            class="recipe-image"
           />
-          <ul class="recipe-meta">
-            <li class="recipe-meta-item">
-              <span class="meta-label">Prep Time</span>
-              <span class="meta-value">15 minutes</span>
-            </li>
-            <li class="recipe-meta-item">
-              <span class="meta-label">Cook Time</span>
-              <span class="meta-value">10 minutes</span>
-            </li>
-            <li class="recipe-meta-item">
-              <span class="meta-label">Total Time</span>
-              <span class="meta-value">25 minutes</span>
-            </li>
-            <li class="recipe-meta-item">
-              <span class="meta-label">Servings</span>
-              <span class="meta-value">8</span>
-            </li>
-          </ul>
+          <ul id="recipeMeta" class="recipe-meta"></ul>
         </header>
-        <section aria-labelledby="ingredients-heading">
-          <h2 id="ingredients-heading">Ingredients</h2>
-          <ul id="ingredient-list" aria-live="polite" aria-atomic="false"></ul>
+        <section class="ingredients" aria-labelledby="ingredientsHeading">
+          <h2 id="ingredientsHeading" class="ingredients__heading">Ingredients</h2>
+          <ul
+            id="ingredientList"
+            class="ingredients__list"
+            aria-live="polite"
+            aria-atomic="false"
+          ></ul>
         </section>
-        <section aria-labelledby="instructions-heading">
-          <h2 id="instructions-heading">Instructions</h2>
-          <ol id="instruction-list"></ol>
+        <section class="instructions" aria-labelledby="instructionsHeading">
+          <h2 id="instructionsHeading" class="instructions__heading">Instructions</h2>
+          <ol id="instructionList" class="instructions__list"></ol>
         </section>
-        <section aria-labelledby="nutrition-heading">
-          <h2 id="nutrition-heading">Nutrition</h2>
-          <p class="nutrition-note">Estimated values per serving</p>
-          <ul id="nutrition-list"></ul>
+        <section class="nutrition" aria-labelledby="nutritionHeading">
+          <h2 id="nutritionHeading" class="nutrition__heading">Nutrition</h2>
+          <p class="nutrition__note">Estimated values per serving</p>
+          <ul id="nutritionList" class="nutrition__list"></ul>
         </section>
       </article>
     </main>
-    <footer>
-      <p>
+    <footer class="site-footer">
+      <p class="site-footer__source">
         Recipe source:
         <a
           href="https://tasty.co/recipe/vegan-pesto-pasta"
           target="_blank"
           rel="noopener noreferrer"
+          class="site-footer__link"
         >
           Tasty - Vegan Pesto Pasta
         </a>
       </p>
-      <p>
+      <p class="site-footer__credit">
         Built to demonstrate WCAG 2.1 AA accessibility.
-        <a href="https://github.com/abuna1985/accessible-recipe"> View source on GitHub </a>
+        <a href="https://github.com/abuna1985/accessible-recipe" class="site-footer__link">
+          View source on GitHub
+        </a>
       </p>
     </footer>
     <script type="module" src="/src/main.ts"></script>
