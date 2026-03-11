@@ -14,21 +14,21 @@
  * formatQuantity(2)     // "2"
  */
 export const formatQuantity = (value: number): string => {
-  const fractions: Record<number, string> = {
-    0.125: "⅛",
-    0.25: "¼",
-    0.333: "⅓",
-    0.5: "½",
-    0.667: "⅔",
-    0.75: "¾",
-  };
+  const fractions: [number, string][] = [
+    [0.125, "⅛"],
+    [0.25, "¼"],
+    [0.333, "⅓"],
+    [0.5, "½"],
+    [0.667, "⅔"],
+    [0.75, "¾"],
+  ];
 
   const whole = Math.floor(value);
   const decimal = Math.round((value - whole) * 1000) / 1000;
 
-  const fraction = fractions[decimal];
+  const match = fractions.find(([frac]) => Math.abs(decimal - frac) < 0.01);
 
-  if (whole === 0) return fraction ?? `${value}`;
-  if (!fraction) return `${value}`;
-  return `${whole}${fraction}`;
+  if (whole === 0) return match ? match[1] : `${value}`;
+  if (!match) return `${value}`;
+  return `${whole}${match[1]}`;
 };
