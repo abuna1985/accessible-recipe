@@ -1,0 +1,179 @@
+/* src/styles/base.css */
+
+/* ---------------------------------------------
+   DESIGN TOKENS
+   Single source of truth for the entire design system.
+   Change here, updates everywhere.
+--------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap");
+
+:root {
+  /* Typography */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Color */
+  --color-bg: #faf8f5;
+  --color-surface: #ffffff;
+  --color-border: #e8e0d5;
+
+  --color-text-primary: #1a1612;
+  --color-text-secondary: #5c5248;
+  --color-text-muted: #8c8078;
+
+  --color-accent: #c85e2a;
+  --color-accent-hover: #a84d22;
+  --color-accent-subtle: #fdf0e8;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Focus */
+  --focus-ring: 3px solid var(--color-accent);
+  --focus-offset: 3px;
+}
+
+/* ---------------------------------------------
+   REDUCED MOTION
+   Respect user's OS preference.
+   WCAG 2.3.3 — animation from interactions can be disabled.
+--------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+  }
+}
+
+/* ---------------------------------------------
+   RESET
+   Minimal. Purposeful. Not opinionated.
+--------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  cursor: default;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--easing-default);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ---------------------------------------------
+   FOCUS STYLES
+   Beautiful focus that replaces the ugly browser default.
+   WCAG 2.4.7 — focus must be visible.
+   WCAG 2.4.11 — focus must not be fully obscured.
+--------------------------------------------- */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------------------------------------------
+   SKIP LINK
+   Visually hidden until focused by keyboard.
+   WCAG 2.4.1 — bypass blocks of repeated content.
+--------------------------------------------- */
+.site-header__skip-link {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.site-header__skip-link:focus-visible {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  overflow: visible;
+  white-space: normal;
+  width: auto;
+  position: fixed;
+  top: var(--space-2);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-3) var(--space-8);
+  background: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}

@@ -1,1 +1,180 @@
- 
+/* src/styles/layout.css */
+/* PURPOSE: Structure only. Spacing, position, max-width.
+   No colors. No typography. No visual styles.
+   WCAG 1.4.8 — line length max ~75ch for readability */
+
+/* ---------------------------------------------
+   PAGE STRUCTURE
+--------------------------------------------- */
+.main {
+  min-height: 100vh;
+  padding: var(--space-8) var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+
+.recipe {
+  max-width: 740px;
+  width: 100%;
+}
+
+/* ---------------------------------------------
+   SITE HEADER
+--------------------------------------------- */
+.site-header {
+  position: relative;
+  z-index: 10;
+  padding: var(--space-4) var(--space-6);
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------
+   RECIPE HEADER
+--------------------------------------------- */
+.recipe__header {
+  margin-bottom: var(--space-12);
+}
+
+.recipe__description {
+  margin-bottom: var(--space-8);
+}
+
+.recipe__image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+/* ---------------------------------------------
+   RECIPE META
+--------------------------------------------- */
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-8);
+}
+
+.recipe-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 80px;
+}
+
+/* ---------------------------------------------
+   SECTIONS
+--------------------------------------------- */
+.ingredients,
+.instructions,
+.nutrition {
+  margin-bottom: var(--space-12);
+  padding-top: var(--space-8);
+}
+
+/* ---------------------------------------------
+   INGREDIENTS
+--------------------------------------------- */
+.ingredients__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ingredients__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+}
+
+.ingredients__quantity {
+  min-width: 5ch;
+  flex-shrink: 0;
+}
+
+.ingredients__name {
+  flex: 1;
+}
+
+/* ---------------------------------------------
+   INSTRUCTIONS
+--------------------------------------------- */
+.instructions__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  counter-reset: step-counter;
+  list-style: none;
+}
+
+.instructions__item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  counter-increment: step-counter;
+  padding: var(--space-6);
+}
+
+/* ---------------------------------------------
+   NUTRITION
+--------------------------------------------- */
+.nutrition__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.nutrition__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.nutrition__note {
+  margin-bottom: var(--space-4);
+}
+
+/* ---------------------------------------------
+   FOOTER
+--------------------------------------------- */
+.site-footer {
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE
+--------------------------------------------- */
+@media (min-width: 768px) {
+  html {
+    font-size: 112.5%;
+  }
+  .main {
+    padding: var(--space-16) var(--space-8);
+  }
+
+  .recipe {
+    max-width: 960px;
+  }
+
+  .nutrition__list {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .recipe-meta {
+    gap: var(--space-8);
+  }
+}

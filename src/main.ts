@@ -1,4 +1,6 @@
 import "./styles/base.css";
+import "./styles/components.css";
+import "./styles/layout.css";
 
 import { validateRecipe } from "./scripts/validate";
 import { renderRecipe } from "./scripts/render";

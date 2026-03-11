@@ -6,6 +6,7 @@
 
 import type { Recipe, Ingredient, NutritionItem } from "../types/recipe";
 import { queryElement } from "./dom";
+import { formatQuantity } from "./utils";
 
 // ---------------------------------------------
 // CREATE FUNCTIONS — build DOM elements, return them
@@ -34,8 +35,10 @@ const createIngredientItem = (ingredient: Ingredient): HTMLLIElement => {
   li.className = "ingredients__item";
 
   const quantity = ingredient.unit
-    ? `${ingredient.quantity} ${ingredient.unit} `
-    : `${ingredient.quantity} `;
+    ? `${formatQuantity(ingredient.quantity)} ${ingredient.unit} `
+    : `${formatQuantity(ingredient.quantity)} `;
+
+  const name = ingredient.note ? `${ingredient.name} (${ingredient.note})` : ingredient.name;
 
   const quantitySpan = document.createElement("span");
   quantitySpan.className = "ingredients__quantity";
@@ -43,17 +46,10 @@ const createIngredientItem = (ingredient: Ingredient): HTMLLIElement => {
 
   const nameSpan = document.createElement("span");
   nameSpan.className = "ingredients__name";
-  nameSpan.textContent = ingredient.name;
+  nameSpan.textContent = name;
 
   li.appendChild(quantitySpan);
   li.appendChild(nameSpan);
-
-  if (ingredient.note) {
-    const noteSpan = document.createElement("span");
-    noteSpan.className = "ingredients__note";
-    noteSpan.textContent = ` (${ingredient.note})`;
-    li.appendChild(noteSpan);
-  }
 
   return li;
 };
